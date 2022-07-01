@@ -31,17 +31,17 @@ def get_user_photo(message):
 @bot.message_handler(commands=['website'])
 def website(message):
     markup = types.InlineKeyboardMarkup()
-    markup.add(types.InlineKeyboardButton("go to inst", url="https://instagram.com/violettaexe"))
+    markup.add(types.InlineKeyboardButton("go to inst", url="https://instagram.com/violettaexe/"))
     bot.send_message(message.chat.id, "go to site!", reply_markup=markup, parse_mode='html')
 
 
 @bot.message_handler(commands=['help'])
 def website(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-    website = types.KeyboardButton('site')
-    start = types.KeyboardButton('start')
-    markup.add(website, start)
-    bot.send_message(message.chat.id, "go to site!", reply_markup=markup, parse_mode='html')
+    button1 = types.KeyboardButton('button1')
+    button2 = types.KeyboardButton('button2')
+    markup.add(button1, button2)
+    bot.send_message(message.chat.id, "choose the button!", reply_markup=markup, parse_mode='html')
 
 
 bot.polling(none_stop=True)
